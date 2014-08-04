@@ -1,9 +1,14 @@
 <h1>My Lists</h1>
 
+<form method="get" action="/">
+  <button>Add Task List</button>
+</form>
+
 <% @task_lists.each do |task_list| %>
 
   <section class="task-list">
     <h1><%= task_list.name %></h1>
   </section>
-
 <% end %>
+
+

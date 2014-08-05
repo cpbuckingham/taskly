@@ -11,13 +11,16 @@
 <% end %>
 <% @task_lists.each do |task_list| %>
 
-
   <section class="task-list">
     <article>
       <h1><%= task_list.name %></h1>
-    </article>
+      <% task_list.tasks.each do |task|%>
+          <dt><%=task%></dt>
+        <%end%>
+        </article>
     <article>
       <%= link_to "Edit", "task_lists/#{task_list.id}/edit" %>
+      <%= link_to "Add Task", "task_lists/#{task_list.id}/tasks/new" %>
     </article>
   </section>
 

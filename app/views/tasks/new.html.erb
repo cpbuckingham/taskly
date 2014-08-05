@@ -1,0 +1,15 @@
+<%= form_for @task, url: task_path, html: {class: "create_task_form"} do |f| %>
+  <div>
+    <%= f.label :description %>
+    <br>
+    <%= f.text_field :description, autofocus: true %>
+    <br>
+    <%= f.label :due_date %>
+    <br>
+    <%= f.date_select :due_date, autofocus: true %>
+  </div>
+  <div>
+    <br>
+    <%= f.submit "Create Task" %>
+  </div>
+<% end %>

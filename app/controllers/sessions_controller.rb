@@ -18,7 +18,9 @@ class SessionsController < ApplicationController
   end
 
   def about
-    render about_path
+  end
+
+  def task
   end
 
   def destroy

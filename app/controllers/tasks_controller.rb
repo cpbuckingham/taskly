@@ -8,7 +8,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(
-      task_list_id: params[:task_list_id],
+      task_list_id: params[:id],
       description: params[:task][:description]    )
     if @task.save
       flash[:notice] = "Task was created successfully!"

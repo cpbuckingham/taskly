@@ -35,5 +35,11 @@ class TaskListsController < ApplicationController
       render :edit
     end
   end
-
+  def destroy
+    @task_list = TaskList.find(params[:id])
+    @task_list.destroy
+    redirect_to root_path
+  end
+  def show
+  end
 end

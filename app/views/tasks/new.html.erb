@@ -1,4 +1,9 @@
-<%= form_for @task, url: task_path, html: {class: "create_task_form"} do |f| %>
+<%= form_for [@task_list, @task], html: {class: "create_task_form"} do |f| %>
+  <% f.object.errors.full_messages.each do |error| %>
+    <div class="errors">
+      <%= error %>
+    </div>
+  <% end %>
   <div>
     <%= f.label :description %>
     <br>

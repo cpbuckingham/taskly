@@ -20,7 +20,7 @@
 }
 
 header {
-  background: navy;
+  background: #00ffa5;
   color: white;
 
   a {
@@ -77,10 +77,19 @@ main {
 .task-list {
   padding: 1em;
   & + & {
-    border-top: 1px solid darkblue;
+    border-top: 5px solid #00ffa5;
   }
 
   h1 {
     font-size: 110%;
+  }
+  #links {
+    display: inline-block;
+    margin-right: 80%;
+  }
+  a {
+    display: inline-block;
+    float: right;
+    margin-left: 15px;
   }
 }

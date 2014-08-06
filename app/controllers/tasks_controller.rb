@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def new
     @task = Task.new
+    @task_list = TaskList.find(params[:task_list_id])
   end
   def index
     @task = Task.order(:description)
@@ -8,8 +9,9 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(
-      task_list_id: params[:id],
-      description: params[:task][:description]    )
+      task_list_id: params[:task_list_id],
+      description: params[:task][:description],
+      due_date: params[:task][:due_date])
     if @task.save
       flash[:notice] = "Task was created successfully!"
       redirect_to root_path
@@ -26,11 +28,21 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     if @task.update(
-      name: params[:description])
+      description: params[:task][:description])
       flash[:notice] = "Your tasks was successfully updated!"
       redirect_to root_path
     else
       render :edit
     end
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to root_path
+  end
+
+  def show
+
   end
   end

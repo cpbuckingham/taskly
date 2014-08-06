@@ -1,0 +1,12 @@
+<h1>Edit a Task</h1>
+<%= form_for @task, url: "/task/#{@task.id}", method: :patch, html: {class: "create_task_form"} do |f| %>
+  <div>
+    <%= f.label :description %>
+    <br>
+    <%= f.text_field :description, autofocus: true, value: @task.description %>
+  </div>
+  <div>
+    <br>
+    <%= f.submit "Update Task" %>
+  </div>
+<% end %>

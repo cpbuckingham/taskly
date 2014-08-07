@@ -5,8 +5,8 @@ class Task < ActiveRecord::Base
   validates :due_date, :presence => true,
             unless: Proc.new {|a| a.due_date < Time.now}
 
-  def self.format_date(date_hash)
-    Date.new(date_hash[:year].to_i,date_hash[:month].to_i,date_hash[:day].to_i)
-
+  def days_left
+    due_date.mjd - Date.today.mjd
   end
+
 end

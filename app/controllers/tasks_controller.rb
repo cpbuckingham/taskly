@@ -11,7 +11,7 @@ class TasksController < ApplicationController
     @task = Task.new(
         description: params[:task][:description],
         task_list_id: params[:task_list_id].to_i,
-        due_date: Task.format_date(params[:task_date]))
+        due_date: Date.new(params[:task_date][:year].to_i, params[:task_date][:month].to_i, params[:task_date][:day].to_i))
         if @task.save
       flash[:notice] = "Task was created successfully!"
       redirect_to root_path

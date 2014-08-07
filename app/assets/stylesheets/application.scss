@@ -92,4 +92,17 @@ main {
     float: right;
     margin-left: 15px;
   }
+ul {
+  padding: 25px;
+  margin-bottom: 10px;
+  background-color: #bfbfbf;
+}
+  .button-link, .button-link a {
+    padding: 4px;
+    margin-right:4px;
+    border: 1px solid black;
+    background: #e9e9e9;
+    text-decoration: none;
+    color:black;
+  }
 }

@@ -11,7 +11,7 @@
     <br>
     <%= f.label :due_date %>
     <br>
-    <%= f.date_select :due_date, autofocus: true %>
+    <%= select_date Time.now, prefix: 'task_date' %>
   </div>
   <div>
     <br>

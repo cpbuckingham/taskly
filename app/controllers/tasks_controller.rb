@@ -9,17 +9,17 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(
-      task_list_id: params[:task_list_id],
-      description: params[:task][:description],
-      due_date: params[:task][:due_date])
-    if @task.save
+        description: params[:task][:description],
+        task_list_id: params[:task_list_id].to_i,
+        due_date: Task.format_date(params[:task_date]))
+        if @task.save
       flash[:notice] = "Task was created successfully!"
       redirect_to root_path
     else
       @task_list = TaskList.find(params[:task_list_id])
       render :new
     end
-  end
+    end
 
   def edit
     @task = Task.find(params[:id])
